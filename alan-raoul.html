@@ -14,13 +14,13 @@
 <body>
 
     <div id="app">
-        <p>Le prix initial est de {{ number1 }} €</p>
+        <p>Prix de départ : {{ number1 }} €</p>
         <input type="number" min="0" v-model="number1">
-        <p>Le promotion est de {{ number2 }} %</p>
-        <input type="number" min="0" v-model="number2">
-        <div class="result" v-if="number1 && number2 != 0">
-        <p>La réduction est de {{ calculPercentage }} €</p>
-        <p>La Nouveau Prix est de {{ calculFinalPrice }} €</p>
+        <p>Promotion : {{ number2 }} %</p>
+        <input type="number" min="0" max="100" v-model="number2">
+        <div v-if="number1 && number2 != 0">
+        <p>La Réduction : {{ calculPercentage }} €</p>
+        <p>Nouveau Prix : {{ calculFinalPrice }} €</p>
         </div>
     </div>
 
